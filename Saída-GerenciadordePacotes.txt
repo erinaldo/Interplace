@@ -1,0 +1,16 @@
+﻿
+
+Tentando coletar informações de dependências do pacote 'RestSharp.106.11.7' em relação ao projeto 'InterRegraNegocio', visando '.NETFramework,Version=v4.7.2'
+A coleta de informações de dependência levou 854 ms
+Tentando resolver dependências do pacote 'RestSharp.106.11.7' com DependencyBehavior 'Lowest'
+Resolver as informações de dependência levou 0 ms
+Resolvendo ações para instalar o pacote 'RestSharp.106.11.7'
+Ações resolvidas para instalar o pacote 'RestSharp.106.11.7'
+Adicionando pacote 'RestSharp.106.11.7' à pasta 'C:\Users\Rodrigo Nunes\Documents\Fontes\Interplace\packages'
+Pacote 'RestSharp.106.11.7' adicionado à pasta 'C:\Users\Rodrigo Nunes\Documents\Fontes\Interplace\packages'
+Pacote 'RestSharp.106.11.7' adicionado a 'packages.config'
+'RestSharp 106.11.7' instalado com sucesso em InterRegraNegocio
+Executar ações do nuget levou 7,98 sec
+Tempo Decorrido: 00:00:09.6556944
+========== Concluído ==========
+
