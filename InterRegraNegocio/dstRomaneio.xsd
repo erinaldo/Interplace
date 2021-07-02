@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstRomaneio" targetNamespace="http://tempuri.org/dstRomaneio.xsd" xmlns:mstns="http://tempuri.org/dstRomaneio.xsd" xmlns="http://tempuri.org/dstRomaneio.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstRomaneio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dstRomaneio" msprop:Generator_UserDSName="dstRomaneio">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtbNota" msprop:Generator_TableClassName="dtbNotaDataTable" msprop:Generator_TableVarName="tabledtbNota" msprop:Generator_RowChangedName="dtbNotaRowChanged" msprop:Generator_TablePropName="dtbNota" msprop:Generator_RowDeletingName="dtbNotaRowDeleting" msprop:Generator_RowChangingName="dtbNotaRowChanging" msprop:Generator_RowEvHandlerName="dtbNotaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtbNotaRowDeleted" msprop:Generator_RowClassName="dtbNotaRow" msprop:Generator_UserTableName="dtbNota" msprop:Generator_RowEvArgName="dtbNotaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CLIENTE" msprop:Generator_ColumnVarNameInTable="columnCLIENTE" msprop:Generator_ColumnPropNameInRow="CLIENTE" msprop:Generator_ColumnPropNameInTable="CLIENTEColumn" msprop:Generator_UserColumnName="CLIENTE" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANSPORTADORA" msprop:Generator_ColumnVarNameInTable="columnTRANSPORTADORA" msprop:Generator_ColumnPropNameInRow="TRANSPORTADORA" msprop:Generator_ColumnPropNameInTable="TRANSPORTADORAColumn" msprop:Generator_UserColumnName="TRANSPORTADORA" type="xs:string" minOccurs="0" />
+              <xs:element name="NUMERONOTA" msprop:Generator_ColumnVarNameInTable="columnNUMERONOTA" msprop:Generator_ColumnPropNameInRow="NUMERONOTA" msprop:Generator_ColumnPropNameInTable="NUMERONOTAColumn" msprop:Generator_UserColumnName="NUMERONOTA" type="xs:string" minOccurs="0" />
+              <xs:element name="DATAENTREGA" msprop:Generator_ColumnVarNameInTable="columnDATAENTREGA" msprop:Generator_ColumnPropNameInRow="DATAENTREGA" msprop:Generator_ColumnPropNameInTable="DATAENTREGAColumn" msprop:Generator_UserColumnName="DATAENTREGA" type="xs:string" minOccurs="0" />
+              <xs:element name="DESTINATARIO" msprop:Generator_ColumnVarNameInTable="columnDESTINATARIO" msprop:Generator_ColumnPropNameInRow="DESTINATARIO" msprop:Generator_ColumnPropNameInTable="DESTINATARIOColumn" msprop:Generator_UserColumnName="DESTINATARIO" type="xs:string" minOccurs="0" />
+              <xs:element name="CIDADE" msprop:Generator_ColumnVarNameInTable="columnCIDADE" msprop:Generator_ColumnPropNameInRow="CIDADE" msprop:Generator_ColumnPropNameInTable="CIDADEColumn" msprop:Generator_UserColumnName="CIDADE" type="xs:string" minOccurs="0" />
+              <xs:element name="UF" msprop:Generator_ColumnVarNameInTable="columnUF" msprop:Generator_ColumnPropNameInRow="UF" msprop:Generator_ColumnPropNameInTable="UFColumn" msprop:Generator_UserColumnName="UF" type="xs:string" minOccurs="0" />
+              <xs:element name="VOLUME" msprop:Generator_ColumnVarNameInTable="columnVOLUME" msprop:Generator_ColumnPropNameInRow="VOLUME" msprop:Generator_ColumnPropNameInTable="VOLUMEColumn" msprop:Generator_UserColumnName="VOLUME" type="xs:string" minOccurs="0" />
+              <xs:element name="CHAVENOTA" msprop:Generator_ColumnVarNameInTable="columnCHAVENOTA" msprop:Generator_ColumnPropNameInRow="CHAVENOTA" msprop:Generator_ColumnPropNameInTable="CHAVENOTAColumn" msprop:Generator_UserColumnName="CHAVENOTA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

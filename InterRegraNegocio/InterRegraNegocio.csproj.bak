@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D79F2A90-09F0-4271-8DBD-4C88484824CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InterRegraNegocio</RootNamespace>
+    <AssemblyName>InterRegraNegocio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DanfeSharp">
+      <HintPath>..\..\..\DanfeSharp-dev\DanfeSharp\bin\Debug\DanfeSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="HttpParamsUtility, Version=2.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HttpParamsUtility.2.0.10\lib\netstandard2.0\HttpParamsUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\PlusAdm\RegraDeNegocio\bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\PlusAdm\RegraDeNegocio\bin\Debug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\PlusAdm\RegraDeNegocio\bin\Debug\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="net-sdk, Version=1.0.4588.26780, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\MercadoLivre\net-sdk.git\trunk\SDK\bin\Release\net-sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Componentes\Newton\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFClown, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFClown.NET.2.0.0\lib\PDFClown.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\Meli\trunk\Lib\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.5.7.0\lib\net45\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.7.0\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.5.7.0\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.5.7.0\lib\net45\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.7.0\lib\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnyMarket.cs" />
+    <Compile Include="B2W\B2WEnvioTracking.cs" />
+    <Compile Include="BaseInfoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClasseFuncoes.cs" />
+    <Compile Include="ClasseNota.cs" />
+    <Compile Include="Connected Services\ServicoCorreios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Correios\ClasseCorreios.cs" />
+    <Compile Include="dstRomaneio.cs">
+      <DependentUpon>dstRomaneio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstRomaneio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstRomaneio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="B2W\EtiquetaB2W.cs" />
+    <Compile Include="FortePlus\AtualizaStatusFortPlus.cs" />
+    <Compile Include="FortePlus\ClienteFortPlus.cs" />
+    <Compile Include="FortePlus\FortPlusCondicaoPagamentos.cs" />
+    <Compile Include="FortePlus\FortPlusEstoques.cs" />
+    <Compile Include="FortePlus\FortPlusFinanceiro.cs" />
+    <Compile Include="FortePlus\FortPlusFinanceiroReduzido.cs" />
+    <Compile Include="FortePlus\FortPlusFormaPagamentos.cs" />
+    <Compile Include="FortePlus\FortPlusPatchProduto.cs" />
+    <Compile Include="FortePlus\FortPlusProdutoComposicao.cs" />
+    <Compile Include="FortePlus\FortPlusXML.cs" />
+    <Compile Include="FortePlus\GlobaisFortPlus.cs" />
+    <Compile Include="FortePlus\login.cs" />
+    <Compile Include="FortePlus\MunicipiosFortPlus.cs" />
+    <Compile Include="FortePlus\ParametroFortPlus.cs" />
+    <Compile Include="FortePlus\Pedido.cs" />
+    <Compile Include="FortePlus\PedidoItemFortPlus.cs" />
+    <Compile Include="FortePlus\Produto.cs" />
+    <Compile Include="FortePlus\ProdutoComplemento.cs" />
+    <Compile Include="FortePlus\TranportadoresFortPlus.cs" />
+    <Compile Include="FortePlus\VendedoresFortPlus.cs" />
+    <Compile Include="frmGenerico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerico.designer.cs">
+      <DependentUpon>frmGenerico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenericoAjuste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenericoAjuste.designer.cs">
+      <DependentUpon>frmGenericoAjuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impressoes\relRomaneio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impressoes\relRomaneio.Designer.cs">
+      <DependentUpon>relRomaneio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JADLOG\JADLOGConsultaTrackingcs.cs" />
+    <Compile Include="JADLOG\JADLOGPedido.cs" />
+    <Compile Include="JADLOG\JADLOGRetornoConsultaTracking.cs" />
+    <Compile Include="JADLOG\JADLOGRetornoPedido.cs" />
+    <Compile Include="MagazineLuiza\ClassePedidoMagazineLuiza.cs" />
+    <Compile Include="MercadoLivre\MercadoLivre.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreAnexo.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreAtualizaProduto.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreCategoriaDetalhe.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreCategoriaProduto.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreEntrega.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreEnvioProduto.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreMensagem.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreOrla.cs" />
+    <Compile Include="MercadoLivre\MercadoLivrePedido.cs" />
+    <Compile Include="MercadoLivre\MercadoLivrePrecoEnvio.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreProduto.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreProdutoRetorno.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreTipoAnuncio.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreUsuario.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreVariacao.cs" />
+    <Compile Include="MercadoLivre\MercadoLivreVariacaoEnvio.cs" />
+    <Compile Include="ORLA\ClasseOrlaMercadoLivre.cs" />
+    <Compile Include="Parametros.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BaseInfoDataSet.xsc">
+      <DependentUpon>BaseInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseInfoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseInfoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseInfoDataSet.xss">
+      <DependentUpon>BaseInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaDataAtualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaOpcoesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.dimensaoTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.mensagemParametrizadaTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.obterMensagemParametrizadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.pesquisarDimensoesServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.pesquisarEmbalagensPorServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.pesquisarParametrosPorDescricaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.pesquisarServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.servicoAdicionalTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.tipoEmbalagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.verificaModalTransporteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCorreios\InterRegraNegocio.ServicoCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="dstRomaneio.xsc">
+      <DependentUpon>dstRomaneio.xsd</DependentUpon>
+    </None>
+    <None Include="dstRomaneio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstRomaneio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dstRomaneio.xss">
+      <DependentUpon>dstRomaneio.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmGenerico.resx">
+      <DependentUpon>frmGenerico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenericoAjuste.resx">
+      <DependentUpon>frmGenericoAjuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impressoes\relRomaneio.resx">
+      <DependentUpon>relRomaneio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicoCorreios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCorreios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCorreios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCorreios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_add_126583.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_customers_59142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Customers_Filled_657911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_exit_2639810.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_ic_delete_48px_352303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_ic_exposure_zero_48px_352338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_save_326688.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_settings_326699.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_081_Pen_183209.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
