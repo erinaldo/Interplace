@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="pt-BR">
+  <Title Text="Acompanhamento de Impressões" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="187.45.196.174_interplacelog_Connection" ProviderKey="MySql">
+        <Parameters>
+          <Parameter Name="server" Value="187.45.196.174" />
+          <Parameter Name="database" Value="interplacelog" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="Port" Value="3306" />
+          <Parameter Name="userid" Value="interplacelog" />
+          <Parameter Name="password" Value="interplace2020" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="NOTAMASTER">
+        <Tables>
+          <Table Name="NOTAMASTER" X="30" Y="30" Width="125" Height="402" />
+          <Table Name="VENDAS" X="270" Y="40" Width="125" Height="542" />
+          <Table Name="CLIENTE" X="495" Y="30" Width="125" Height="682" />
+          <Relation Type="LeftOuter" Parent="NOTAMASTER" Nested="VENDAS">
+            <KeyColumn Parent="CHAVENOTA" Nested="NOTAFISCAL" />
+          </Relation>
+          <Relation Type="LeftOuter" Parent="NOTAMASTER" Nested="CLIENTE">
+            <KeyColumn Parent="CNPJ" Nested="CNPJCLIENTES" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="NOTAMASTER" Name="NOTA" />
+          <Column Table="NOTAMASTER" Name="DATA" />
+          <Expression Alias="Finalizado">TOINT([NOTAMASTER.FINALIZADO])</Expression>
+          <Expression Alias="Separado">TOINT([NOTAMASTER.SEPARADO])</Expression>
+          <Expression Alias="Romaneio">TOINT([NOTAMASTER.ROMANEIO])</Expression>
+          <Column Table="VENDAS" Name="LOJA" />
+          <Column Table="CLIENTE" Name="CLIENTE" />
+        </Columns>
+        <Filter>[NOTAMASTER.CNPJ] = '30383841000277' And [VENDAS.LOJA] Is Not Null</Filter>
+        <GroupFilter></GroupFilter>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="NOTAMASTER">
+            <Field Name="NOTA" Type="String" />
+            <Field Name="DATA" Type="DateTime" />
+            <Field Name="Finalizado" Type="Int64" />
+            <Field Name="Separado" Type="Int64" />
+            <Field Name="Romaneio" Type="Int64" />
+            <Field Name="LOJA" Type="String" />
+            <Field Name="CLIENTE" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Impressões" DataSource="dashboardSqlDataSource1" DataMember="NOTAMASTER">
+      <DataItems>
+        <Dimension DataMember="NOTA" DefaultId="DataItem0" />
+        <Dimension DataMember="DATA" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem1" />
+        <Dimension DataMember="Romaneio" DefaultId="DataItem4" />
+        <Dimension DataMember="Separado" DefaultId="DataItem3" />
+        <Dimension DataMember="Finalizado" DefaultId="DataItem2" />
+        <Dimension DataMember="LOJA" DefaultId="DataItem5" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" Enabled="false">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Int32" Value="0" />
+                  <IconSettings IconType="ShapeRedCircle" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Int32" Value="1" />
+                  <IconSettings IconType="ShapeGreenCircle" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 2" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="IndicatorRedCross" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Int32" Value="1" />
+                  <IconSettings IconType="IndicatorGreenCheck" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 3" DataItem="DataItem2" DataItemApplyTo="DataItem2">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="IndicatorRedCross" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Int32" Value="1" />
+                  <IconSettings IconType="IndicatorGreenCheck" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 4" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="IndicatorRedCross" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Int32" Value="1" />
+                  <IconSettings IconType="IndicatorGreenCheck" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Nota">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Data">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Loja">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <Grid ComponentName="gridDashboardItem2" Name="Grid 2" ShowCaption="false" DataSource="dashboardSqlDataSource1" DataMember="NOTAMASTER">
+      <DataItems>
+        <Dimension DataMember="CLIENTE" DefaultId="DataItem0" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Filtrar Nota" DataSource="dashboardSqlDataSource1" DataMember="NOTAMASTER">
+      <DataItems>
+        <Dimension DataMember="NOTA" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutItem DashboardItem="gridDashboardItem2" Weight="9.2664092664092657" />
+      <LayoutItem DashboardItem="comboBoxDashboardItem1" Weight="11.583011583011583" />
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="79.150579150579148" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
