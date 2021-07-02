@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/04/2021 21:03:37" ReportInfo.Modified="04/07/2021 11:05:47" ReportInfo.CreatorVersion="2021.2.0.0">
+  <Dictionary>
+    <MySqlDataConnection Name="conexaoPrincipal" ConnectionString="rijcmlqlD4DfC68TfbpGE9s782T14aghB4Y3OKritf5dPYNXvK4Y9zRoGBCdk7hlgYgVTs3flPcnK9TG94aphvU6mVdUSP4TtNst01d6ahLc+13j/XxNm4ldtoSPtbH93hvp31E">
+      <TableDataSource Name="Table" Alias="NotaGeral" DataType="System.Int32" Enabled="true" SelectCommand="SELECT N.NOTA, N.CHAVENOTA, N.DATA, N.CNPJ, N1.PRODUTO, N1.DESCRICAO, N1.QUANTIDADE&#13;&#10;FROM `NOTAMASTER` N INNER JOIN `NOTADETALHE` N1 ON N.NOTA = N1.NOTA &#13;&#10;WHERE N.NOTA IN (@NOTAS)&#13;&#10;GROUP BY N.NOTA&#13;&#10;">
+        <Column Name="NOTA" DataType="System.String"/>
+        <Column Name="CHAVENOTA" DataType="System.String"/>
+        <Column Name="DATA" DataType="System.DateTime"/>
+        <Column Name="CNPJ" DataType="System.String"/>
+        <Column Name="PRODUTO" DataType="System.String"/>
+        <Column Name="DESCRICAO" DataType="System.String"/>
+        <Column Name="QUANTIDADE" DataType="System.Int32"/>
+        <CommandParameter Name="NOTAS" DataType="3" DefaultValue="297"/>
+      </TableDataSource>
+    </MySqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="227.8" Top="5" Width="283.5" Height="28.35" Text="Relatório Separação" Font="Arial, 20pt" TextOutline.Width="5"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text11" Left="28.35" Width="94.5" Height="18.9" Text="PRODUTO" Font="Arial, 10pt"/>
+      <TextObject Name="Text13" Left="151.2" Width="94.5" Height="18.9" Text="DESCRICAO" Font="Arial, 10pt"/>
+      <TextObject Name="Text15" Left="491.4" Width="103.95" Height="18.9" Text="QUANTIDADE" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="74.15" Width="718.2" Height="37.8" Condition="[NotaGeral.NOTA]">
+      <TextObject Name="Text3" Left="9.45" Width="37.8" Height="18.9" Text="Nota" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="9.45" Top="18.9" Width="47.25" Height="18.9" Text="CNPJ" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="283.5" Top="18.9" Width="56.7" Height="18.9" Text="Chave" Font="Arial, 10pt"/>
+      <TextObject Name="Text16" Left="66.15" Width="94.5" Height="18.9" Text="[NotaGeral.NOTA]" Font="Arial, 10pt"/>
+      <TextObject Name="Text17" Left="66.15" Top="18.9" Width="151.2" Height="18.9" Text="[NotaGeral.CNPJ]" Font="Arial, 10pt"/>
+      <TextObject Name="Text18" Left="340.2" Top="18.9" Width="359.1" Height="18.9" Text="[NotaGeral.CHAVENOTA]" Font="Arial, 10pt"/>
+      <TextObject Name="Text19" Left="604.8" Width="94.5" Height="18.9" Text="[NotaGeral.DATA]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+      <DataBand Name="Data1" Top="115.95" Width="718.2" Height="56.7" DataSource="Table">
+        <TextObject Name="Text6" Left="812.7" Top="37.8" Width="94.5" Height="18.9" Font="Arial, 10pt"/>
+        <TextObject Name="Text20" Left="28.35" Top="9.45" Width="151.2" Height="18.9" Text="[NotaGeral.PRODUTO]" Font="Arial, 10pt"/>
+        <TextObject Name="Text21" Left="179.55" Top="9.45" Width="340.2" Height="18.9" Text="[NotaGeral.DESCRICAO]" Font="Arial, 10pt"/>
+        <TextObject Name="Text22" Left="519.75" Top="9.45" Width="94.5" Height="18.9" Text="[NotaGeral.QUANTIDADE]" Font="Arial, 10pt"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="176.65" Width="718.2" Height="37.8"/>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="218.45" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
